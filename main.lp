@@ -59,7 +59,7 @@ temp :- high_temp->write("The sea surface temperature is at a crucial level - th
 %Get the difference or Co2 levels and output comparison
 car :- low_co2->nl->write("The current co2 level meets the standards of prime conditions.").
 car :- good_co2->nl->write("The current CO2 is lower than the standards of prime conditions.").
-car :- high_co2->nl->write("High levels of CO2 detected.").
+car :- high_co2->nl->write("The levels of Co2 are at a high risk for acidification. To combat the impact of this change, coral restoration is suggested through the forms of epigenetic modifications, marine permaculture, and coral nurseries.").
 
 %Get the difference or salinity values and output comparison
 sal :- good_sal->nl->write("The current saline levels meet the standards of prime conditions.").
@@ -77,7 +77,7 @@ coral_bleaching :- high_co2, high_temp.
 threatened(X) :- endangered(X), coral_bleaching.
 
 %diagnose the system and give recommendations
-diagnostics(X) :- temp, car, sal->nl->write("Place these Species on endangered list: "), threatened(X).
+diagnostics(X) :- temp, car, sal->nl->write("These species are in immediate danger: "), threatened(X).
 
 
 
